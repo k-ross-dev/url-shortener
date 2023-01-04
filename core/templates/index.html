@@ -1,0 +1,36 @@
+{%extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} Welcome to the URL Shortener page! {% endblock %}</h1>
+    <h4> Enter the URL you would like shortened, as well as the custom shortened URL, if you would like</h4>
+    <br>
+    <div>
+        <form method="post" action="{{url_for('index')}}">
+            <div>
+                <input type="text" name="long_url" id="long_url" placeholder="enter your URL here..." class="form-control" value="{{request.form['long_url']}}" autofocus>
+                <label for="long_url">URL</label>
+            </div> 
+
+            <!--Added in case the user wants to create their own short url-->
+            <div>
+                <input type="text" name="custom_url" id="custom_url" placeholder="optionally, name your own short url" class="form-control" value="{{request.form['custom_url']}}" autofocus>
+                <label for="custom_url">Custom URL</label>
+            </div>
+            <!-- Potential for additional Functionality (unfinished)
+            <div>
+                <input type="text" name="search_url" id="search_url" placeholder=enter shortened url to access use statistics" class="form-control" value="{{request.form['search_url']}}" autofocus>
+                <label for="url">Custom URL</label>
+            </div>
+            -->
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-lg btn-primary">Shorten!</button>
+            </div>
+            
+        </form>
+
+        {% if short_url %}
+        <span><a href="{{ short_url }}">{{ short_url }}</a></span>
+        {% endif %}
+
+    </div>
+{% endblock %}
