@@ -8,13 +8,14 @@ Done under the the prompt for a web-based application that will shorten URLs, bu
 ---
 
 ### Implementation functionalities:
---* Form box to enter a URL
---* Returns the Original URL
+* Form box to enter a URL
+
+* Returns the Original URL
 
 ![URL Box](./Capture-1.PNG "URL box")
 
 
---* Form box to enter a potential custom id, if that is desired. 
+* Form box to enter a potential custom id, if that is desired. 
 
 
 ![URL Box](./Capture-2.PNG "URL box")
