@@ -22,9 +22,9 @@ Done under the the prompt for a web-based application that will shorten URLs, bu
 
 
 ### Future Implementation functionalities:
---* Finish the database entries. As is, entering the data into the DB is commented out, but I did not set up the server completely.
---* Check the use count of a specific URL, so users can monitor the use of a URL
---* Assess long-term stability of the character length. As it stands, it'll handle something like  62 ^ 8, or 2.18340105585e+14 entries. Is this enough?
+* Finish the database entries. As is, entering the data into the DB is commented out, but I did not set up the server completely.
+* Check the use count of a specific URL, so users can monitor the use of a URL
+* Assess long-term stability of the character length. As it stands, it'll handle something like  62 ^ 8, or 2.18340105585e+14 entries. Is this enough?
 
 ### Time spent
 I spent somewhere near 3 hours. As I continue to improve my web dev skills, I have been researching and creating small projects. This includes learning and understanding Flask. 
