@@ -29,7 +29,9 @@
         </form>
 
         {% if short_url %}
-        <span><a href="{{ short_url }}">{{ short_url }}</a></span>
+        <p>Original Link: <span><a href="{{ request.form['long_url'] }}">{{ request.form['long_url'] }}</a></span></p>
+        <br />
+        <p>New, Shorter Link: <span><a href="{{ short_url }}">{{ short_url }}</a></span></p>
         {% endif %}
 
     </div>

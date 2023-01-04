@@ -14,32 +14,31 @@ def create_short_id(num_of_chars: int=8):
     
     """
     random_string = ''
-
     for _ in range(num_of_chars):
-        random_string.join(choice(string.ascii_letters+string.digits)) 
-    return random_string + str(datetime.now().second)
+        random_string += choice(string.ascii_letters+string.digits)
+    return random_string
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        url = request.form['url']
+        url = request.form['long_url']
         short_id = request.form['custom_url']
 
-        if short_id and ShortUrls.query.filter_by(short_id=short_id).first() is not None:
-            flash('Sorry, That URL is taken! Try another.')
-            return redirect(url_for('index'))
+        #if short_id and ShortUrls.query.filter_by(short_id=short_id).first() is not None:
+        #    flash('Sorry, That URL is taken! Try another.')
+        #    return redirect(url_for('index'))
 
         if not url:
             flash("Can't Shorten nothing! The URL is required!")
             return redirect(url_for('index'))
 
         if not short_id:
-            short_id = create_short_id(7)
+            short_id = create_short_id(8)
 
-        new_link = ShortUrls(
-            original_url=url, short_id=short_id, created_at=datetime.now())
-        db.session.add(new_link)
-        db.session.commit()
+        #new_link = ShortUrls(
+           #original_url=url, short_id=short_id, created_at=datetime.now())
+        #db.session.add(new_link)
+        #db.session.commit()
         short_url = request.host_url + short_id
 
         return render_template('index.html', short_url=short_url)
